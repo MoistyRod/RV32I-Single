@@ -1,0 +1,14 @@
+
+module RV32I_Single(
+	input logic [31:0] Instr, ReadData,
+	input logic reset, clk,
+	output logic [31:0] PC, DataAdr, WriteData
+	output logic MemWrite
+);
+	
+	logic [2:0] ImmSrc, LdStrSrc;
+	logic PCSrc, RegWrite, PCTargetSrc, ALUSrcA, ALUSrcB;
+	logic [3:0] ALUControl;
+	logic [1:0] ResultSrc;
+	logic eq, lt, ltu;
+	

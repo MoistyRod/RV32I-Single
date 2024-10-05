@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Sat Oct  5 21:06:59 2024
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : RV32I_Single
+Top-level Entity Name : top
+Family : MAX 10
+Total logic elements : 17,691
+    Total combinational functions : 8,539
+    Dedicated logic registers : 9,248
+Total registers : 9248
+Total pins : 98
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

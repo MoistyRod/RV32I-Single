@@ -1,0 +1,23 @@
+
+module top(
+	input logic 			clk, reset,
+	output logic [31:0] 	DataAdr, WriteData,
+	output logic 			MemWrite
+);
+	
+	logic [31:0]	Instr, ReadData, PC;
+	
+	
+	RV32I_Single rv_single(
+		.clk(clk), .reset(reset), .Instr(Instr), .ReadData(ReadData),
+		.MemWrite(MemWrite), .PC(PC), DataAdr(DataAdr), .WriteData(WriteData)
+	);
+		
+	Instr_Memory imem(.PC(PC), .Instr(Instr));
+	
+	Data_Memory dmem(
+		.clk(clk), .MemWrite(MemWrite), .DataAdr(DataAdr), .WriteData(WriteData),
+		.ReadData(ReadData)
+	);
+	
+endmodule

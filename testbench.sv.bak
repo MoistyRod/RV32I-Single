@@ -1,0 +1,8 @@
+
+module testbench():
+
+	logic	clk, reset;
+	logic WriteData, DataAdr;
+	logic MemWrite;
+	
+	top dut(.clk(clk), .reset(reset), 

@@ -1,0 +1,17 @@
+
+module Instr_Memory(
+	input logic [31:0]	a,
+	output logic [31:0]	rd
+);
+
+	//64x 32-bit words
+	logic [31:0] RAM[63:0];
+	
+	//read hexadecimal instructions from path into memory
+	initial
+		$readmemh("path", memory);
+	
+	//word aligned memory
+	assign rd = memory[a[31:2]];
+	
+endmodule

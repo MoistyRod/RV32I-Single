@@ -1,0 +1,505 @@
+Analysis & Synthesis report for RV32I_Single
+Sat Oct  5 21:06:59 2024
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: RV32I_Single:rvsingle|datapath:dp|flopr:pc_reg
+ 11. Parameter Settings for User Entity Instance: RV32I_Single:rvsingle|datapath:dp|mux2:target_mux
+ 12. Parameter Settings for User Entity Instance: RV32I_Single:rvsingle|datapath:dp|mux2:pcnext_mux
+ 13. Parameter Settings for User Entity Instance: RV32I_Single:rvsingle|datapath:dp|mux2:srca_mux
+ 14. Parameter Settings for User Entity Instance: RV32I_Single:rvsingle|datapath:dp|mux2:srcb_mux
+ 15. Port Connectivity Checks: "RV32I_Single:rvsingle|datapath:dp|mux2:srca_mux"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Oct  5 21:06:59 2024          ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                      ; RV32I_Single                                   ;
+; Top-level Entity Name              ; top                                            ;
+; Family                             ; MAX 10                                         ;
+; Total logic elements               ; 17,691                                         ;
+;     Total combinational functions  ; 8,539                                          ;
+;     Dedicated logic registers      ; 9,248                                          ;
+; Total registers                    ; 9248                                           ;
+; Total pins                         ; 98                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50SCE144I7G     ;                    ;
+; Top-level entity name                                            ; top                ; RV32I_Single       ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.1%      ;
+;     Processor 6            ;   0.1%      ;
+;     Processor 7            ;   0.1%      ;
+;     Processor 8            ;   0.1%      ;
+;     Processors 9-12        ;   0.1%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                              ;
++------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                     ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                      ; Library ;
++------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+; RV32I_Single.sv                                      ; yes             ; User SystemVerilog HDL File  ; D:/Studies/DDCA/RV32I_Single/RV32I_Single.sv                                      ;         ;
+; controller.sv                                        ; yes             ; User SystemVerilog HDL File  ; D:/Studies/DDCA/RV32I_Single/controller.sv                                        ;         ;
+; datapath.sv                                          ; yes             ; User SystemVerilog HDL File  ; D:/Studies/DDCA/RV32I_Single/datapath.sv                                          ;         ;
+; main_decoder.sv                                      ; yes             ; User SystemVerilog HDL File  ; D:/Studies/DDCA/RV32I_Single/main_decoder.sv                                      ;         ;
+; brchjmp_decoder.sv                                   ; yes             ; User SystemVerilog HDL File  ; D:/Studies/DDCA/RV32I_Single/brchjmp_decoder.sv                                   ;         ;
+; alu_decoder.sv                                       ; yes             ; User SystemVerilog HDL File  ; D:/Studies/DDCA/RV32I_Single/alu_decoder.sv                                       ;         ;
+; flopr.sv                                             ; yes             ; User SystemVerilog HDL File  ; D:/Studies/DDCA/RV32I_Single/flopr.sv                                             ;         ;
+; mux2.sv                                              ; yes             ; User SystemVerilog HDL File  ; D:/Studies/DDCA/RV32I_Single/mux2.sv                                              ;         ;
+; regfile.sv                                           ; yes             ; User SystemVerilog HDL File  ; D:/Studies/DDCA/RV32I_Single/regfile.sv                                           ;         ;
+; extend.sv                                            ; yes             ; User SystemVerilog HDL File  ; D:/Studies/DDCA/RV32I_Single/extend.sv                                            ;         ;
+; alu.sv                                               ; yes             ; User SystemVerilog HDL File  ; D:/Studies/DDCA/RV32I_Single/alu.sv                                               ;         ;
+; store.sv                                             ; yes             ; User SystemVerilog HDL File  ; D:/Studies/DDCA/RV32I_Single/store.sv                                             ;         ;
+; load.sv                                              ; yes             ; User SystemVerilog HDL File  ; D:/Studies/DDCA/RV32I_Single/load.sv                                              ;         ;
+; top.sv                                               ; yes             ; User SystemVerilog HDL File  ; D:/Studies/DDCA/RV32I_Single/top.sv                                               ;         ;
+; Instr_Memory.sv                                      ; yes             ; User SystemVerilog HDL File  ; D:/Studies/DDCA/RV32I_Single/Instr_Memory.sv                                      ;         ;
+; Data_Memory.sv                                       ; yes             ; User SystemVerilog HDL File  ; D:/Studies/DDCA/RV32I_Single/Data_Memory.sv                                       ;         ;
+; instruction_memory/rv32i_simple_test(instr_only).txt ; yes             ; Auto-Found File              ; D:/Studies/DDCA/RV32I_Single/instruction_memory/rv32i_simple_test(instr_only).txt ;         ;
++------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 17,691    ;
+;                                             ;           ;
+; Total combinational functions               ; 8539      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 7774      ;
+;     -- 3 input functions                    ; 692       ;
+;     -- <=2 input functions                  ; 73        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 8446      ;
+;     -- arithmetic mode                      ; 93        ;
+;                                             ;           ;
+; Total registers                             ; 9248      ;
+;     -- Dedicated logic registers            ; 9248      ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 98        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 9248      ;
+; Total fan-out                               ; 61253     ;
+; Average fan-out                             ; 3.41      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                ;
++--------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                         ; Entity Name     ; Library Name ;
++--------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------+-----------------+--------------+
+; |top                           ; 8539 (0)            ; 9248 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 98   ; 0            ; 0          ; |top                                                        ; top             ; work         ;
+;    |Data_Memory:dmem|          ; 5728 (5728)         ; 8192 (8192)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|Data_Memory:dmem                                       ; Data_Memory     ; work         ;
+;    |Instr_Memory:imem|         ; 195 (195)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|Instr_Memory:imem                                      ; Instr_Memory    ; work         ;
+;    |RV32I_Single:rvsingle|     ; 2616 (0)            ; 1056 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|RV32I_Single:rvsingle                                  ; RV32I_Single    ; work         ;
+;       |controller:c|           ; 37 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|RV32I_Single:rvsingle|controller:c                     ; controller      ; work         ;
+;          |alu_decoder:ad|      ; 9 (9)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|RV32I_Single:rvsingle|controller:c|alu_decoder:ad      ; alu_decoder     ; work         ;
+;          |brchjmp_decoder:bjd| ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|RV32I_Single:rvsingle|controller:c|brchjmp_decoder:bjd ; brchjmp_decoder ; work         ;
+;          |main_decoder:md|     ; 24 (24)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|RV32I_Single:rvsingle|controller:c|main_decoder:md     ; main_decoder    ; work         ;
+;       |datapath:dp|            ; 2579 (323)          ; 1056 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|RV32I_Single:rvsingle|datapath:dp                      ; datapath        ; work         ;
+;          |alu:alu|             ; 507 (507)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|RV32I_Single:rvsingle|datapath:dp|alu:alu              ; alu             ; work         ;
+;          |extend:ext|          ; 35 (35)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|RV32I_Single:rvsingle|datapath:dp|extend:ext           ; extend          ; work         ;
+;          |flopr:pc_reg|        ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|RV32I_Single:rvsingle|datapath:dp|flopr:pc_reg         ; flopr           ; work         ;
+;          |load:ld|             ; 25 (25)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|RV32I_Single:rvsingle|datapath:dp|load:ld              ; load            ; work         ;
+;          |mux2:pcnext_mux|     ; 64 (64)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|RV32I_Single:rvsingle|datapath:dp|mux2:pcnext_mux      ; mux2            ; work         ;
+;          |mux2:srca_mux|       ; 33 (33)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|RV32I_Single:rvsingle|datapath:dp|mux2:srca_mux        ; mux2            ; work         ;
+;          |mux2:srcb_mux|       ; 46 (46)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|RV32I_Single:rvsingle|datapath:dp|mux2:srcb_mux        ; mux2            ; work         ;
+;          |mux2:target_mux|     ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|RV32I_Single:rvsingle|datapath:dp|mux2:target_mux      ; mux2            ; work         ;
+;          |regfile:rf|          ; 1397 (1397)         ; 1024 (1024)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|RV32I_Single:rvsingle|datapath:dp|regfile:rf           ; regfile         ; work         ;
+;          |store:str|           ; 117 (117)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|RV32I_Single:rvsingle|datapath:dp|store:str            ; store           ; work         ;
++--------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 9248  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 32    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 9216  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top|RV32I_Single:rvsingle|datapath:dp|extend:ext|Mux12 ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; No         ; |top|RV32I_Single:rvsingle|datapath:dp|store:str|Mux29  ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |top|RV32I_Single:rvsingle|datapath:dp|store:str|Mux10  ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |top|RV32I_Single:rvsingle|datapath:dp|store:str|Mux16  ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |top|RV32I_Single:rvsingle|datapath:dp|store:str|Mux4   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |top|RV32I_Single:rvsingle|datapath:dp|extend:ext|Mux4  ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |top|RV32I_Single:rvsingle|datapath:dp|Mux23            ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 14 LEs               ; 10 LEs                 ; No         ; |top|RV32I_Single:rvsingle|datapath:dp|alu:alu|Mux22    ;
+; 19:1               ; 4 bits    ; 48 LEs        ; 28 LEs               ; 20 LEs                 ; No         ; |top|RV32I_Single:rvsingle|datapath:dp|alu:alu|Mux27    ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; No         ; |top|RV32I_Single:rvsingle|datapath:dp|Mux31            ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 16 LEs               ; 10 LEs                 ; No         ; |top|RV32I_Single:rvsingle|datapath:dp|alu:alu|Mux28    ;
+; 25:1               ; 7 bits    ; 112 LEs       ; 70 LEs               ; 42 LEs                 ; No         ; |top|RV32I_Single:rvsingle|datapath:dp|Mux14            ;
+; 25:1               ; 5 bits    ; 80 LEs        ; 50 LEs               ; 30 LEs                 ; No         ; |top|RV32I_Single:rvsingle|datapath:dp|Mux21            ;
+; 26:1               ; 4 bits    ; 68 LEs        ; 40 LEs               ; 28 LEs                 ; No         ; |top|RV32I_Single:rvsingle|datapath:dp|Mux5             ;
+; 27:1               ; 2 bits    ; 36 LEs        ; 22 LEs               ; 14 LEs                 ; No         ; |top|RV32I_Single:rvsingle|datapath:dp|Mux3             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RV32I_Single:rvsingle|datapath:dp|flopr:pc_reg ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RV32I_Single:rvsingle|datapath:dp|mux2:target_mux ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RV32I_Single:rvsingle|datapath:dp|mux2:pcnext_mux ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RV32I_Single:rvsingle|datapath:dp|mux2:srca_mux ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RV32I_Single:rvsingle|datapath:dp|mux2:srcb_mux ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Port Connectivity Checks: "RV32I_Single:rvsingle|datapath:dp|mux2:srca_mux" ;
++------+-------+----------+---------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                           ;
++------+-------+----------+---------------------------------------------------+
+; d1   ; Input ; Info     ; Stuck at GND                                      ;
++------+-------+----------+---------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 98                          ;
+; cycloneiii_ff         ; 9248                        ;
+;     CLR               ; 32                          ;
+;     ENA               ; 9216                        ;
+; cycloneiii_lcell_comb ; 8539                        ;
+;     arith             ; 93                          ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 63                          ;
+;     normal            ; 8446                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 41                          ;
+;         3 data inputs ; 629                         ;
+;         4 data inputs ; 7774                        ;
+;                       ;                             ;
+; Max LUT depth         ; 35.00                       ;
+; Average LUT depth     ; 20.41                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:37     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Sat Oct  5 21:06:14 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RV32I_Single -c RV32I_Single
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file rv32i_single.sv
+    Info (12023): Found entity 1: RV32I_Single File: D:/Studies/DDCA/RV32I_Single/RV32I_Single.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file controller.sv
+    Info (12023): Found entity 1: controller File: D:/Studies/DDCA/RV32I_Single/controller.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file datapath.sv
+    Info (12023): Found entity 1: datapath File: D:/Studies/DDCA/RV32I_Single/datapath.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file main_decoder.sv
+    Info (12023): Found entity 1: main_decoder File: D:/Studies/DDCA/RV32I_Single/main_decoder.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file brchjmp_decoder.sv
+    Info (12023): Found entity 1: brchjmp_decoder File: D:/Studies/DDCA/RV32I_Single/brchjmp_decoder.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file alu_decoder.sv
+    Info (12023): Found entity 1: alu_decoder File: D:/Studies/DDCA/RV32I_Single/alu_decoder.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file flopr.sv
+    Info (12023): Found entity 1: flopr File: D:/Studies/DDCA/RV32I_Single/flopr.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file mux2.sv
+    Info (12023): Found entity 1: mux2 File: D:/Studies/DDCA/RV32I_Single/mux2.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
+    Info (12023): Found entity 1: regfile File: D:/Studies/DDCA/RV32I_Single/regfile.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file extend.sv
+    Info (12023): Found entity 1: extend File: D:/Studies/DDCA/RV32I_Single/extend.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
+    Info (12023): Found entity 1: alu File: D:/Studies/DDCA/RV32I_Single/alu.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file store.sv
+    Info (12023): Found entity 1: store File: D:/Studies/DDCA/RV32I_Single/store.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file load.sv
+    Info (12023): Found entity 1: load File: D:/Studies/DDCA/RV32I_Single/load.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file top.sv
+    Info (12023): Found entity 1: top File: D:/Studies/DDCA/RV32I_Single/top.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file instr_memory.sv
+    Info (12023): Found entity 1: Instr_Memory File: D:/Studies/DDCA/RV32I_Single/Instr_Memory.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file data_memory.sv
+    Info (12023): Found entity 1: Data_Memory File: D:/Studies/DDCA/RV32I_Single/Data_Memory.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file testbench.sv
+    Info (12023): Found entity 1: testbench File: D:/Studies/DDCA/RV32I_Single/testbench.sv Line: 2
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Info (12128): Elaborating entity "RV32I_Single" for hierarchy "RV32I_Single:rvsingle" File: D:/Studies/DDCA/RV32I_Single/top.sv Line: 18
+Info (12128): Elaborating entity "controller" for hierarchy "RV32I_Single:rvsingle|controller:c" File: D:/Studies/DDCA/RV32I_Single/RV32I_Single.sv Line: 26
+Info (12128): Elaborating entity "main_decoder" for hierarchy "RV32I_Single:rvsingle|controller:c|main_decoder:md" File: D:/Studies/DDCA/RV32I_Single/controller.sv Line: 31
+Info (12128): Elaborating entity "brchjmp_decoder" for hierarchy "RV32I_Single:rvsingle|controller:c|brchjmp_decoder:bjd" File: D:/Studies/DDCA/RV32I_Single/controller.sv Line: 40
+Info (12128): Elaborating entity "alu_decoder" for hierarchy "RV32I_Single:rvsingle|controller:c|alu_decoder:ad" File: D:/Studies/DDCA/RV32I_Single/controller.sv Line: 49
+Info (12128): Elaborating entity "datapath" for hierarchy "RV32I_Single:rvsingle|datapath:dp" File: D:/Studies/DDCA/RV32I_Single/RV32I_Single.sv Line: 41
+Info (12128): Elaborating entity "flopr" for hierarchy "RV32I_Single:rvsingle|datapath:dp|flopr:pc_reg" File: D:/Studies/DDCA/RV32I_Single/datapath.sv Line: 29
+Info (12128): Elaborating entity "mux2" for hierarchy "RV32I_Single:rvsingle|datapath:dp|mux2:target_mux" File: D:/Studies/DDCA/RV32I_Single/datapath.sv Line: 31
+Info (12128): Elaborating entity "regfile" for hierarchy "RV32I_Single:rvsingle|datapath:dp|regfile:rf" File: D:/Studies/DDCA/RV32I_Single/datapath.sv Line: 41
+Info (12128): Elaborating entity "extend" for hierarchy "RV32I_Single:rvsingle|datapath:dp|extend:ext" File: D:/Studies/DDCA/RV32I_Single/datapath.sv Line: 42
+Info (12128): Elaborating entity "alu" for hierarchy "RV32I_Single:rvsingle|datapath:dp|alu:alu" File: D:/Studies/DDCA/RV32I_Single/datapath.sv Line: 52
+Info (12128): Elaborating entity "store" for hierarchy "RV32I_Single:rvsingle|datapath:dp|store:str" File: D:/Studies/DDCA/RV32I_Single/datapath.sv Line: 58
+Info (12128): Elaborating entity "load" for hierarchy "RV32I_Single:rvsingle|datapath:dp|load:ld" File: D:/Studies/DDCA/RV32I_Single/datapath.sv Line: 61
+Info (12128): Elaborating entity "Instr_Memory" for hierarchy "Instr_Memory:imem" File: D:/Studies/DDCA/RV32I_Single/top.sv Line: 24
+Warning (10850): Verilog HDL warning at Instr_Memory.sv(12): number of words (75) in memory file does not match the number of elements in the address range [0:255] File: D:/Studies/DDCA/RV32I_Single/Instr_Memory.sv Line: 12
+Warning (10030): Net "memory.data_a" at Instr_Memory.sv(8) has no driver or initial value, using a default initial value '0' File: D:/Studies/DDCA/RV32I_Single/Instr_Memory.sv Line: 8
+Warning (10030): Net "memory.waddr_a" at Instr_Memory.sv(8) has no driver or initial value, using a default initial value '0' File: D:/Studies/DDCA/RV32I_Single/Instr_Memory.sv Line: 8
+Warning (10030): Net "memory.we_a" at Instr_Memory.sv(8) has no driver or initial value, using a default initial value '0' File: D:/Studies/DDCA/RV32I_Single/Instr_Memory.sv Line: 8
+Info (12128): Elaborating entity "Data_Memory" for hierarchy "Data_Memory:dmem" File: D:/Studies/DDCA/RV32I_Single/top.sv Line: 30
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "RV32I_Single:rvsingle|controller:c|brchjmp_decoder:bjd|flag" feeding internal logic into a wire File: D:/Studies/DDCA/RV32I_Single/brchjmp_decoder.sv Line: 10
+    Warning (13049): Converted tri-state buffer "RV32I_Single:rvsingle|controller:c|main_decoder:md|MemWrite" feeding internal logic into a wire File: D:/Studies/DDCA/RV32I_Single/main_decoder.sv Line: 5
+    Warning (13049): Converted tri-state buffer "RV32I_Single:rvsingle|controller:c|main_decoder:md|ResultSrc[0]" feeding internal logic into a wire File: D:/Studies/DDCA/RV32I_Single/main_decoder.sv Line: 8
+    Warning (13049): Converted tri-state buffer "RV32I_Single:rvsingle|controller:c|main_decoder:md|ResultSrc[1]" feeding internal logic into a wire File: D:/Studies/DDCA/RV32I_Single/main_decoder.sv Line: 8
+    Warning (13049): Converted tri-state buffer "RV32I_Single:rvsingle|controller:c|main_decoder:md|ALUSrcB" feeding internal logic into a wire File: D:/Studies/DDCA/RV32I_Single/main_decoder.sv Line: 6
+    Warning (13049): Converted tri-state buffer "RV32I_Single:rvsingle|controller:c|main_decoder:md|ALUSrcA" feeding internal logic into a wire File: D:/Studies/DDCA/RV32I_Single/main_decoder.sv Line: 6
+    Warning (13049): Converted tri-state buffer "RV32I_Single:rvsingle|controller:c|main_decoder:md|PCTargetSrc" feeding internal logic into a wire File: D:/Studies/DDCA/RV32I_Single/main_decoder.sv Line: 5
+    Warning (13049): Converted tri-state buffer "RV32I_Single:rvsingle|controller:c|main_decoder:md|RegWrite" feeding internal logic into a wire File: D:/Studies/DDCA/RV32I_Single/main_decoder.sv Line: 7
+    Warning (13049): Converted tri-state buffer "RV32I_Single:rvsingle|controller:c|main_decoder:md|ImmSrc[0]" feeding internal logic into a wire File: D:/Studies/DDCA/RV32I_Single/main_decoder.sv Line: 9
+    Warning (13049): Converted tri-state buffer "RV32I_Single:rvsingle|controller:c|main_decoder:md|ImmSrc[1]" feeding internal logic into a wire File: D:/Studies/DDCA/RV32I_Single/main_decoder.sv Line: 9
+    Warning (13049): Converted tri-state buffer "RV32I_Single:rvsingle|controller:c|main_decoder:md|ImmSrc[2]" feeding internal logic into a wire File: D:/Studies/DDCA/RV32I_Single/main_decoder.sv Line: 9
+    Warning (13049): Converted tri-state buffer "RV32I_Single:rvsingle|controller:c|main_decoder:md|ALUOp[0]" feeding internal logic into a wire File: D:/Studies/DDCA/RV32I_Single/main_decoder.sv Line: 12
+    Warning (13049): Converted tri-state buffer "RV32I_Single:rvsingle|controller:c|main_decoder:md|ALUOp[1]" feeding internal logic into a wire File: D:/Studies/DDCA/RV32I_Single/main_decoder.sv Line: 12
+    Warning (13049): Converted tri-state buffer "RV32I_Single:rvsingle|controller:c|main_decoder:md|Branch" feeding internal logic into a wire File: D:/Studies/DDCA/RV32I_Single/main_decoder.sv Line: 10
+    Warning (13049): Converted tri-state buffer "RV32I_Single:rvsingle|controller:c|main_decoder:md|Jump" feeding internal logic into a wire File: D:/Studies/DDCA/RV32I_Single/main_decoder.sv Line: 10
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Studies/DDCA/RV32I_Single/db/RV32I_Single.ram0_Instr_Memory_24daf050.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (276014): Found 3 instances of uninferred RAM logic
+    Info (276007): RAM logic "RV32I_Single:rvsingle|datapath:dp|regfile:rf|rf" is uninferred due to asynchronous read logic File: D:/Studies/DDCA/RV32I_Single/regfile.sv Line: 11
+    Info (276013): RAM logic "Instr_Memory:imem|memory" is uninferred because MIF is not supported for the selected family File: D:/Studies/DDCA/RV32I_Single/Instr_Memory.sv Line: 8
+    Info (276007): RAM logic "Data_Memory:dmem|memory" is uninferred due to asynchronous read logic File: D:/Studies/DDCA/RV32I_Single/Data_Memory.sv Line: 10
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Studies/DDCA/RV32I_Single/db/RV32I_Single.ram0_Instr_Memory_24daf050.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file D:/Studies/DDCA/RV32I_Single/output_files/RV32I_Single.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 17885 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 96 output pins
+    Info (21061): Implemented 17787 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 4913 megabytes
+    Info: Processing ended: Sat Oct  5 21:06:59 2024
+    Info: Elapsed time: 00:00:45
+    Info: Total CPU time (on all processors): 00:00:24
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/Studies/DDCA/RV32I_Single/output_files/RV32I_Single.map.smsg.
+
+

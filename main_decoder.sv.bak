@@ -1,0 +1,15 @@
+
+module main_dec(
+	input logic [6:0] op,
+	//output
+	output logic MemWrite, PCTargetSrc
+	output logic ALUSrcA, ALUSrcB,
+	output logic RegWrite,
+	output logic [1:0] ResultSrc,
+	output logic [2:0] ImmSrc,
+	output logic branch, Jump,
+	output logic [1:0] ALUOp
+);
+
+	
+	

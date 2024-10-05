@@ -1,0 +1,18 @@
+
+module controller(
+	input logic eq, lt, ltu,
+	input logic [6:0] op,
+	input logic [2:0]funct3,
+	input logic funct7,
+	output logic PC, MemWrite, 
+	output logic ALUSrcA, ALUSrcB,
+	output logic PCTargetSrc, RegWrite,
+	output logic [1:0] ResultSrc,
+	output logic [2:0] LdStrSrc, ImmSrc,
+	output logic [3:0] ALUControl
+)
+
+	
+	
+
+	
