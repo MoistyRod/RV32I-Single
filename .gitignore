@@ -1,0 +1,7 @@
+Quartus/db/
+Quartus/incremental_db/
+Quartus/output_files/
+Quartus/*.bak
+Quartus/*.qws
+Quartus/*.qsf
+Quartus/*.qpf
