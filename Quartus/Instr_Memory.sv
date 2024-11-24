@@ -9,7 +9,7 @@ module Instr_Memory(
 	
 	//read hexadecimal instructions from path into memory
 	initial
-		$readmemh("D:/Studies/DDCA/RV32I_Single/Instruction_memory/rv32i_simple_test(instr_only).txt", memory);
+		$readmemh("instruction_memory/rv32i_simple_test(instr_only).txt", memory);
 	
 	//word aligned memory
 	assign rd = memory[a[31:2]];

@@ -16,7 +16,7 @@ module testbench();
 	initial
 		begin
 			fail_counter = 0;	//initiialize fail counter
-			$readmemh("D:/Studies/DDCA/RV32I_Single/Instruction_memory/rv32i_simple_test.txt", testvectors);	//load test into testvectors
+			$readmemh("instruction_memory/rv32i_simple_test.txt", testvectors);	//load test into testvectors
 			reset <= 1;
 			#22;
 			reset <= 0;
