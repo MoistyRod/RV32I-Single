@@ -10,13 +10,13 @@ As it is a single-cycle processor, all stages must be completed within the same 
 Diagrams of other modules can be found in the [diagrams pdf](diagrams/rv32i_singlecycle.drawio.pdf).
 
 ### Controller Encoding
-[Encoding snapshot](diagrams\control_encoding_snapshot.png)
+![Encoding snapshot](diagrams\control_encoding_snapshot.png)
 [Encoding spreadsheet link](https://docs.google.com/spreadsheets/d/1ObX82jtqt7p4MyPdnp8WD8ZDNUcQtPOa4eVUBDf5Vuc/edit?usp=sharing)
 In the link above, you can find the controller encodings which I used. 
 These encodings are used to control the modules in the datapath based on the given instruction.
 
 ## Simulation and Testing
-[QuestaSim snapshot](diagrams/questasim_snapshot.png)
+![QuestaSim snapshot](diagrams/questasim_snapshot.png)
 To test the core, I wrote a [RV32I assembly program](quartus\instruction_memory\rv32i_simple_test(desc).txt) which includes all unprivileged RV32I instructions. The instructions also include extreme values to test for edge cases. 
 I then wrote a testbench which compares the Writeback value and the subsequent Program Counter value with their expected values for each test instruction.
 The core is simulated using QuestaSim, which also allows me to execute the testbench and analyse the digital signals in the core for debugging and to further verify correctness.
