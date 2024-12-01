@@ -10,7 +10,7 @@ As it is a single-cycle processor, all stages must be completed within the same 
 Diagrams of other modules can be found in the [diagrams pdf](diagrams/rv32i_singlecycle.drawio.pdf).
 
 ### Controller Encoding
-![Encoding snapshot](diagrams\control_encoding_snapshot.png)
+![Encoding snapshot](diagrams/control_encoding_snapshot.png)
 [Encoding spreadsheet link](https://docs.google.com/spreadsheets/d/1ObX82jtqt7p4MyPdnp8WD8ZDNUcQtPOa4eVUBDf5Vuc/edit?usp=sharing)
 In the link above, you can find the controller encodings which I used. 
 These encodings are used to control the modules in the datapath based on the given instruction.
