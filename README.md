@@ -11,8 +11,7 @@ Diagrams of other modules can be found in the [diagrams pdf](diagrams/rv32i_sing
 
 ### Controller Encoding
 ![Encoding snapshot](diagrams/control_encoding_snapshot.png)
-[Encoding spreadsheet link](https://docs.google.com/spreadsheets/d/1ObX82jtqt7p4MyPdnp8WD8ZDNUcQtPOa4eVUBDf5Vuc/edit?usp=sharing)
-In the link above, you can find the controller encodings which I used. 
+[In this spreadsheet](https://docs.google.com/spreadsheets/d/1ObX82jtqt7p4MyPdnp8WD8ZDNUcQtPOa4eVUBDf5Vuc/edit?usp=sharing), you can find the controller encodings which I used. 
 These encodings are used to control the modules in the datapath based on the given instruction.
 
 ## Simulation and Testing
