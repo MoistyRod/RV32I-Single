@@ -5,3 +5,5 @@ Quartus/*.bak
 Quartus/*.qws
 Quartus/*.qsf
 Quartus/*.qpf
+
+diagrams/rv32i_singlecycle.drawio.pdf
