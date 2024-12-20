@@ -23,8 +23,8 @@ These encodings are used to control the modules in the datapath based on the ins
 
 ## Simulation and Testing
 ![QuestaSim snapshot](diagrams/questasim_snapshot.png)
-To test the core, I wrote a [RV32I assembly program](quartus/instruction_memory/rv32i_simple_test(desc).txt) which includes all unprivileged RV32I instructions. The test loads and stores every register in the Register File, and also tests for edge cases during execution by including extreme values.\
-I then wrote a testbench which compares the Writeback value and the subsequent Program Counter value with their expected values for each test instruction.\
+To test the core, I wrote a [RV32I assembly program](Quartus/instruction_memory/rv32i_simple_test(desc).txt) which includes all unprivileged RV32I instructions. The test loads and stores every register in the Register File, and also tests for edge cases during execution by including extreme values to be operated on.\
+I also wrote a testbench which compares the Writeback value and the subsequent Program Counter value with their expected values for each test instruction.\
 The core is simulated using QuestaSim, which also allows me to execute the testbench and analyse each digital signal in the core for debugging and to further verify correctness in the core.
 
 ## Tools used and Credits
